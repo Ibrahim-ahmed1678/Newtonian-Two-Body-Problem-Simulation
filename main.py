@@ -1,4 +1,5 @@
 import pygame
+#from pygame.locals import *
 #import pymunk
 # Import pymunk for physics
 
@@ -13,4 +14,9 @@ pygame.draw.circle(window, (255, 0, 0), (300, 300), 170, 0)
 #update the display
 pygame.display.update()
 
-# Quit Pygame
+running = True
+while running:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      running = False
+pygame.quit()
