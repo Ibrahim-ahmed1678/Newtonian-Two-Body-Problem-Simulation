@@ -1,4 +1,4 @@
-#TWO BODY PROBLEM NEWTONIAN AND GR
+# TWO BODY PROBLEM NEWTONIAN AND GR
 Newtonian done by @Ibrahim
 GR to be done by @Aman
 
