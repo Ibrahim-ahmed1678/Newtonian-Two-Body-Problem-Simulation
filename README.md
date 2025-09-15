@@ -18,8 +18,6 @@ Features **adaptive timestepping**, **energy conservation checks**, **real-time 
 ---
 
 ## 📦 Installation
-Clone the repo and install dependencies:
+Install dependencies:
 ```bash
-git clone https://github.com/your-username/two-body-simulation.git
-cd two-body-simulation
 pip install -r requirements.txt
