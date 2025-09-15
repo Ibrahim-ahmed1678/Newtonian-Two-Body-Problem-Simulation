@@ -1,6 +1,25 @@
-# TWO BODY PROBLEM NEWTONIAN AND GR
-Newtonian done by @Ibrahim
+# 🌌 Two-Body Planetary Simulation
 
-GR to be done by @Aman
+A Python-based physics engine and visualization toolkit for simulating Newtonian two-body gravitational dynamics in 2D.  
+Features **adaptive timestepping**, **energy conservation checks**, **real-time Pygame visualization**, and **Matplotlib-based orbit analysis**.  
 
-Wikipedia for problem - https://en.wikipedia.org/wiki/Two-body_problem 
+---
+
+## 🚀 Features
+- ⚖️ **Physics Engine** — Simulates gravitational interactions with numerical integration via `scipy.solve_ivp`.  
+- ⏱ **Adaptive Timestepping** — Maintains stability across fast and slow orbital regimes.  
+- 🔋 **Energy Conservation Checks** — Tracks kinetic, potential, and total system energy.  
+- 🎨 **Visualizations**  
+  - **Pygame (real-time)** — Interactive orbit visualizer with trails, scaling, and live info.  
+  - **Matplotlib (analysis)** — Detailed orbital trajectory plots, energy trends, distance tracking, and phase space.  
+- 🪐 **Predefined Systems** — Earth–Moon and Binary Star examples included.  
+- 🛠 **Modular Design** — Physics and visualization components can be extended to N-body systems or games.  
+
+---
+
+## 📦 Installation
+Clone the repo and install dependencies:
+```bash
+git clone https://github.com/your-username/two-body-simulation.git
+cd two-body-simulation
+pip install -r requirements.txt
