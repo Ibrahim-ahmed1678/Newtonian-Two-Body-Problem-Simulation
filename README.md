@@ -8,13 +8,13 @@ Features **adaptive timestepping**, **energy conservation checks**, **real-time 
 ## 🚀 Features
 - ⚖️ **Physics Engine** — Simulates gravitational interactions with numerical integration via `scipy.solve_ivp`.  
 - ⏱ **Adaptive Timestepping** — Maintains stability across fast and slow orbital regimes.  
-- 🔋 **Energy Conservation Checks** — Tracks kinetic, potential, and total system energy.  
+- 🔋 **Energy Conservation Checks** — Tracks kinetic, potential, and total system energy.
+  
 - 🎨 **Visualizations**  
   - **Pygame (real-time)** — Interactive orbit visualizer with trails, scaling, and live info.  
-  - **Matplotlib (analysis)** — Detailed orbital trajectory plots, energy trends, distance tracking, and phase space.  
+  - **Matplotlib (analysis)** — Detailed orbital trajectory plots and energy trends.
+      
 - 🪐 **Predefined Systems** — Earth–Moon and Binary Star examples included.  
-- 🛠 **Modular Design** — Physics and visualization components can be extended to N-body systems or games.  
-
 ---
 
 ## 📦 Installation
