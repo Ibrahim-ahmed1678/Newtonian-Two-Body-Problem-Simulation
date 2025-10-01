@@ -14,7 +14,7 @@ Features **adaptive timestepping**, **energy conservation checks**, **real-time 
   - **Pygame (real-time)** — Interactive orbit visualizer with trails, scaling, and live info.  
   - **Matplotlib (analysis)** — Detailed orbital trajectory plots and energy trends.
       
-- **Predefined Systems** — Earth–Moon and Binary Star examples included.  
+- **Predefined Systems** — Earth–Sun and 5 planet and Sun system examples included.  
 ---
 
 ##  Installation
