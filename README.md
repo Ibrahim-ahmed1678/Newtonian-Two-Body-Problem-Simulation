@@ -24,7 +24,6 @@ pip install -r requirements.txt
 ```
 ---
 ## TODO:
-- 5-body system diverges very quickly -> probably better to simply remove this part and instead simulate a two body system for each of the planets in our solar system.
 
 - live trajectory plot is not that helpful -> perhaps a better feature would be to have phase-space plots (maybe).
 

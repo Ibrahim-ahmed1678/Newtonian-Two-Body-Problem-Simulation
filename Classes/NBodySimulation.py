@@ -8,11 +8,14 @@ from support import G, SOFTENING
 
 # ------------------ Simulation Core (N-body) ------------------
 class NBodySimulation:
-    def __init__(self, bodies: List[Body], G_const: float = G, soft: float = SOFTENING):
+    def __init__(self, bodies: List[Body], G_const: float = G, soft: float = SOFTENING,
+                 central_body_index: int | None = 0):
+        
         self.bodies = bodies
         self.G = G_const
         self.softening = soft
         self.time = 0.0
+        self.central = central_body_index
 
         # Compute initial accelerations for velocity verlet
         self.accs = self.compute_accelerations()
@@ -55,6 +58,12 @@ class NBodySimulation:
                 if i == j:
                     continue
 
+                #  ignore interactions between two non-central bodies
+                if self.central is not None:
+                    if i != self.central and j != self.central:
+                        # neither body is the central one, skip gravity
+                        continue
+
                 r = positions[j] - pi
                 dist2 = float(np.dot(r, r)) + self.softening
                 inv_dist3 = 1.0 / (math.sqrt(dist2) * dist2)
@@ -93,6 +102,12 @@ class NBodySimulation:
         # pairwise potential
         for i in range(N):
             for j in range(i + 1, N):
+
+                # skip planet-planet potential
+                if self.central is not None:
+                    if i != self.central and j != self.central:
+                        continue
+
                 r = self.bodies[j].pos - self.bodies[i].pos
                 dist = math.sqrt(float(np.dot(r, r)) + self.softening)
                 PE += -self.G * self.bodies[i].mass * self.bodies[j].mass / dist

@@ -34,11 +34,11 @@ def create_five_body_demo():
     # small compact system of several bodies (toy)
     bodies = []
     np.random.seed(42)
-    center_mass = 2.0
+    center_mass = 10
     bodies.append(Body(center_mass, np.array([0.0, 0.0]), np.array([0.0, 0.0]), radius=10, color=(255,180,80)))
 
     for i in range(4):
-        angle = i * (2.0 * math.pi / 4.0)
+        angle = i * math.pi / 2.0
         r = 0.8 + 0.2 * i
         pos = np.array([r * math.cos(angle), r * math.sin(angle)])
         speed = math.sqrt(G * center_mass / r) * (0.9 + 0.05 * i)

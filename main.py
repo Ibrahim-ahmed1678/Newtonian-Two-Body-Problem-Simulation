@@ -52,8 +52,15 @@ def main():
 
     chosen = int(input("Enter choice: ").strip())  # change to 2 to start with 5-body, or keep choice interactive if desired
 
-    bodies = presets[chosen][1]()
-    sim = NBodySimulation(bodies)
+    # create bodies according to preset; some presets may support extra options
+    if chosen == 2:
+        # ask user whether to ignore planet-planet gravity
+        bodies = presets[chosen][1]()
+        sim = NBodySimulation(bodies, central_body_index=0)
+    else:
+        bodies = presets[chosen][1]()
+        sim = NBodySimulation(bodies)
+    
     cam = Camera(WIDTH, HEIGHT, scale=220.0)
     liveplot = LivePlot()
 
