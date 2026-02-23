@@ -6,7 +6,7 @@ Features **adaptive timestepping**, **energy conservation checks**, **real-time 
 ---
 
 ## Features
-- **Physics Engine** — Simulates gravitational interactions with numerical integration via `scipy.solve_ivp`.  
+- **Physics Engine** — Simulates gravitational interactions with numerical integration via velocity Verlet algorithm.  
 -  **Adaptive Timestepping** — Maintains stability across fast and slow orbital regimes.  
 -  **Energy Conservation Checks** — Tracks kinetic, potential, and total system energy.
   
