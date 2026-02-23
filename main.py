@@ -41,14 +41,16 @@ def main():
     # choose preset — you can expand this list or create body lists interactively
     presets = {
         1: ("Two-body star+planet", create_two_body_star_planet),
-        2: ("Five-body demo", create_five_body_demo)
+        2: ("Five-body demo", create_five_body_demo),
+        3: ("Two-body star+star", create_two_body_star_planet)
     }
     print("\n\n==============================")
     print("N-body Orbit Simulator")
     print("==============================\n")
     print("Choose a preset system:\n")
     print("1: Two-body star+planet")
-    print("2: Five-body demo\n")
+    print("2: Five-body demo")
+    print("3: Two body star-star\n")
 
     chosen = int(input("Enter choice: ").strip())  # change to 2 to start with 5-body, or keep choice interactive if desired
 
@@ -58,7 +60,7 @@ def main():
         bodies = presets[chosen][1]()
         sim = NBodySimulation(bodies, central_body_index=0)
     else:
-        bodies = presets[chosen][1]()
+        bodies = presets[chosen][1](chosen)
         sim = NBodySimulation(bodies)
     
     cam = Camera(WIDTH, HEIGHT, scale=220.0)

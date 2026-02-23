@@ -16,18 +16,29 @@ SOFTENING = 1e-4  # prevents singularities in close encounters
 
 
 # ------------------ Example system creators ------------------
-def create_two_body_star_planet():
+def create_two_body_star_planet(choice: int):
 
-    m1 = 1.0
-    m2 = 0.001
-    r0 = 1.0
-    v_circ = math.sqrt(G * (m1 + m2) / r0)
+    if choice == 1:
+        m1 = 1
+        m2 = 0.001
+        r0 = 1.0
+        v_circ = math.sqrt(G * (m1 + m2) / r0)
 
-    b1 = Body(m1, np.array([0.0, 0.0], dtype=float), np.array([0.0, 0.0], dtype=float),
-              radius=8, color=(255, 200, 50))
-    b2 = Body(m2, np.array([r0, 0.0], dtype=float), np.array([0.0, 0.95 * v_circ], dtype=float),
-              radius=5, color=(120, 170, 255))
-    
+        b1 = Body(m1, np.array([0, 0.0], dtype=float), np.array([0.0, 0.0], dtype=float),
+                  radius=8, color=(255, 200, 50))
+        b2 = Body(m2, np.array([r0, 0.0], dtype=float), np.array([0.0, 0.95 * v_circ], dtype=float),
+                  radius=5, color=(120, 170, 255))
+    elif choice == 3:
+        m1 = 10
+        m2 = 10
+        r0 = 1.0
+        v_circ = math.sqrt(G * (m1 + m2) / r0)
+
+        b1 = Body(m1, np.array([-r0, 0.0], dtype=float), np.array([-0.4, 0.4 * v_circ], dtype=float),
+                  radius=8, color=(255, 200, 50))
+        b2 = Body(m2, np.array([r0, 0.0], dtype=float), np.array([0.4, -0.4 * v_circ], dtype=float),
+                  radius=8, color=(255, 91, 0))
+        
     return [b1, b2]
 
 def create_five_body_demo():
